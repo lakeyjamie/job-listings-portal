@@ -10,11 +10,19 @@ class Header extends Component {
 		console.log(wist);
 		return (
 			<header>
-				<img src={wist} alt="women in sports tech logo orange box" className="sponsor-logo"/>
-				<img src={st} alt="sport techie logo" className="sponsor-logo"/>
-				<a href="https://gowist.seeker.company/submit/job" target="_blank">
-					<button> Post a job! - $250</button>
-				</a>
+				<div className="header-left">
+					<div className="media">
+						<img src={wist} alt="women in sports tech logo orange box" className="sponsor-logo"/>
+					</div>
+					<div className="media">
+						<img src={st} alt="sport techie logo" className="sponsor-logo"/>
+					</div>
+				</div>
+				<div className="header-right">
+					<a href="https://gowist.seeker.company/submit/job" target="_blank">
+						<button> Post a job! - $250</button>
+					</a>					
+				</div>						
 				
 			</header>
 		);

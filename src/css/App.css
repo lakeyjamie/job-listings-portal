@@ -15,10 +15,6 @@
 
 header {
   grid-area: header;
-
-  display: flex;
-  justify-content: left;
-  align-items: center;
 }
 
 nav {
@@ -63,5 +59,9 @@ footer {
 
   main {
     margin: 0px 2rem;
+  }
+
+  header {
+    flex-wrap: wrap;
   }
 }

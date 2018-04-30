@@ -1,12 +1,27 @@
 header {
 	background: black;
+	display: flex;
+
 }
 
 .sponsor-logo {
 	height: 70px;
-	margin: 15px;
+	margin: 15px 0px 15px 15px ;
 }
 
-.button-post-job {
-	background: white;
+.header-right {
+	margin-left: auto;
+	margin-right: 15px;
+	margin-top: auto;
+	margin-bottom: auto;
 }
+
+.header-left{
+	display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
