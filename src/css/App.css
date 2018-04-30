@@ -60,4 +60,8 @@ footer {
   nav, aside {
     margin: 0;
   }
+
+  main {
+    margin: 0px 2rem;
+  }
 }
