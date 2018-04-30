@@ -12,6 +12,10 @@ class Header extends Component {
 			<header>
 				<img src={wist} alt="women in sports tech logo orange box" className="sponsor-logo"/>
 				<img src={st} alt="sport techie logo" className="sponsor-logo"/>
+				<a href="https://gowist.seeker.company/submit/job" target="_blank">
+					<button> Post a job! - $250</button>
+				</a>
+				
 			</header>
 		);
 	}

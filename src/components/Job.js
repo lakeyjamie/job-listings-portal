@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import '../css/Job.css';
 import { formatDaysAgo } from '../helpers';
 
 class Job extends Component {
@@ -25,8 +26,10 @@ class Job extends Component {
     	//console.log('going to render a job');
     	//console.log(this.props.details);
 			return (
-				<div>
-					<h5>{job_title} · {company.name}</h5>
+				<div className="job-item">
+					<a href={job_application_link} target="_blank">
+						<h5>{job_title} · {company.name}</h5>
+					</a>
 					<p>{job_location}</p>
 					<p>{formatDaysAgo(creation_date)} days ago</p>
 				</div>

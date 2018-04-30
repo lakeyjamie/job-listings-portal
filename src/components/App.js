@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../css/App.css';
 import Job from './Job';
 import Header from './Header';
-
+import Footer from './Footer';
 
 class App extends Component {
   constructor(props) {
@@ -80,6 +80,9 @@ class App extends Component {
         <div className="container">
           <Header />
           <main>
+            <h1>Job Postings in Sports Tech</h1>
+            <h2>You'll find opportunities at all levels in all businesses throughout the sports technology and sports innovation landscape.</h2>
+            <p>Brought to you by Women In Sports Tech and SportTechie</p>
             {
               Object.keys(this.state.jobs.results).map(key => <Job 
                 key={key}
@@ -89,6 +92,7 @@ class App extends Component {
               /> )
             }
           </main>
+          <Footer />
         </div>
       );
     }
