@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../css/App.css';
 import Job from './Job';
+import Header from './Header';
 
 
 class App extends Component {
@@ -77,6 +78,7 @@ class App extends Component {
     } else {
       return (
         <div className="container">
+          <Header />
           <main>
             {
               Object.keys(this.state.jobs.results).map(key => <Job 

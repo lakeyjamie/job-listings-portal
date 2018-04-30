@@ -22,8 +22,8 @@ class Job extends Component {
 	 if (!this.props.isLoaded) {
       return <div>not loaded yet</div>;
     } else {
-    	console.log('going to render a job');
-    	console.log(this.props.details);
+    	//console.log('going to render a job');
+    	//console.log(this.props.details);
 			return (
 				<div>
 					<h5>{job_title} · {company.name}</h5>
