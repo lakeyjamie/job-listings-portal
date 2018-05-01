@@ -27,7 +27,7 @@ class Job extends Component {
     	//console.log(this.props.details);
 			return (
 				<div className="job-item">
-					<a href={job_application_link} target="_blank">
+					<a href={job_application_link} target="_blank" rel="noopener noreferrer">
 						<h5>{job_title} · {company.name}</h5>
 					</a>
 					<p>{job_location}</p>
