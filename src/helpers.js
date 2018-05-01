@@ -75,7 +75,6 @@ export function timeAgo(dateParam) {
   } else if (isYesterday) {
     return getFormattedDate(date, 'Yesterday'); // Yesterday at 10:20
   } else if (isThisMonth){
-  	console.log("this month");
   	return getFormattedDate(date, false, false, daysAgo); //X days ago
   } else if (isThisYear) {
     return getFormattedDate(date, false, true, false); // 10. January at 10:20
