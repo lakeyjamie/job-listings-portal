@@ -16,7 +16,7 @@ header {
 	margin-bottom: auto;
 }
 
-.header-left{
+.header-left {
 	display: flex;
   justify-content: left;
   align-items: center;
@@ -25,3 +25,12 @@ header {
   padding: 0;
 }
 
+
+@media (max-width: 560px) {
+  .header-left {
+    flex-wrap: wrap;
+  }
+	.header-right{
+		margin: 32.5px auto 32.5px auto;
+	}
+}

@@ -6,7 +6,7 @@
     "nav content side"
     "footer footer footer";
 
-  grid-template-columns: 200px 1fr 200px;
+  grid-template-columns: 50px 1fr 50px;
   grid-template-rows: auto 1fr auto;
   grid-gap: 10px;
 
@@ -35,7 +35,7 @@ footer {
   grid-area: footer;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 560px) {
   .container {
     grid-template-areas:
       "header"
