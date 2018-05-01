@@ -1,5 +1,5 @@
 .job-item {
-	margin: 50px;
+	margin: 0 10vw;
 	border-bottom-color: lightgray;
 	border-width: thick;
 }
@@ -7,3 +7,14 @@
 .job-item h5 {
 	margin: 0px;
 }
+
+@media (max-width: 560px) {
+  .job-item {
+		margin: 5vw;
+  }
+	.job-item h4,
+	.job-item h5,
+	.job-item h6{
+		font-size: 1em;
+  }
+ }

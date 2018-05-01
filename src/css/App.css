@@ -64,4 +64,8 @@ footer {
   header {
     flex-wrap: wrap;
   }
+
+  .job-item {
+    margin: 0;
+  }
 }
