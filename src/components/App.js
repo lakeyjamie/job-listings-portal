@@ -32,12 +32,7 @@ class App extends Component {
       headers: new Headers({
         'Authorization': 'Token 9fc3c846-f1ca-4f40-9659-9905469caae9', 
         'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'Host': 'https://api.seeker.company',
-        'Access-Control-Request-Method': 'GET',
-        'Access-Control-Allow-Origin':true,
-        'Access-Control-Allow-Headers':'Authorization',
-        'Access-Control-Request-Headers': "*"
+        'Accept': 'application/json'
         })
       }
     )
