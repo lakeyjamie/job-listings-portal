@@ -82,7 +82,7 @@ class App extends Component {
           <main>
             <h1>Job Postings in Sports Tech</h1>
             <h4>You'll find opportunities at all levels in all businesses throughout the sports technology and sports innovation landscape.</h4>
-            <p>Brought to you by Women In Sports Tech and SportTechie.</p>
+            <p>Brought to you by <a href="http://womeninsportstech.org/" target="_blank" rel="noopener noreferrer">Women In Sports Tech</a> and <a href="https://www.sporttechie.com/" target="_blank" rel="noopener noreferrer">SportTechie</a>.</p>
             {
               Object.keys(this.state.jobs.results).map(key => <Job 
                 key={key}

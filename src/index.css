@@ -1,3 +1,11 @@
+/* Table of contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Base Styles
+- Typography
+- Buttons
+- Links
+*/
+
 body {
   margin: 0;
   padding: 0;
@@ -78,3 +86,11 @@ input[type="button"].button-primary:focus {
   color: #FFF;
   background-color: #1EAEDB;
   border-color: #1EAEDB; }
+
+
+/* Links
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+  color: #2A2C2B; }
+a:hover {
+  color: #000000; }
