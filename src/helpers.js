@@ -24,7 +24,6 @@ function getFormattedDate(date, prefomattedDate = false, hideYear = false, daysA
   }
 
   if (daysAgo) {
-
   	return Math.round(daysAgo) + " days ago";
   }
 
@@ -34,7 +33,7 @@ function getFormattedDate(date, prefomattedDate = false, hideYear = false, daysA
   }
 
   // 10. January 2017. at 10:20
-  return `${ day }. ${ month } ${ year }`;
+  return `${ month } ${ day }, ${ year }`;
 }
 
 

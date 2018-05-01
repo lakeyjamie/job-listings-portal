@@ -31,7 +31,7 @@ class Job extends Component {
 						<h5>{job_title} · {company.name}</h5>
 					</a>
 					<p>{job_location}</p>
-					<p>Posted {timeAgo(creation_date)}</p>
+					<p>{timeAgo(creation_date)}</p>
 				</div>
 			);
 		}
