@@ -35,7 +35,9 @@ class App extends Component {
         'Accept': 'application/json',
         'Host': 'https://api.seeker.company',
         'Access-Control-Request-Method': 'GET',
-        'Access-Control-Allow-Origin':true
+        'Access-Control-Allow-Origin':true,
+        'Access-Control-Allow-Headers':'Authorization',
+        'Access-Control-Request-Headers': "*"
         })
       }
     )
