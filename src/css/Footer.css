@@ -1,9 +1,14 @@
 footer {
 	height: 100px;
 	background-color: black;
+	padding: 15px;
 }
 
 footer p {
-	margin: 15px;
+	color: lightgray;
+}
+
+footer a {
 	color: white;
+	font-weight: 400;
 }
