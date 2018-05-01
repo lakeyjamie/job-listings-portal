@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import '../css/Job.css';
-import { formatDaysAgo } from '../helpers';
+import { timeAgo } from '../helpers';
 
 class Job extends Component {
 	static propTypes = {
@@ -31,7 +31,7 @@ class Job extends Component {
 						<h5>{job_title} · {company.name}</h5>
 					</a>
 					<p>{job_location}</p>
-					<p>{formatDaysAgo(creation_date)} days ago</p>
+					<p>Posted {timeAgo(creation_date)}</p>
 				</div>
 			);
 		}
