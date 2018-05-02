@@ -15,7 +15,7 @@ class Footer extends Component {
 
 	render() {
 		const title = 'Vetted job listings in the sports tech space.';
-		const shareURL = 'http://jobs.womeninsportstech.org/';
+		const shareURL = 'http://sportstech.careers/';
 		return (
 			<footer>
 				<p>Brought to you by <a href="http://womeninsportstech.org/" target="_blank" rel="noopener noreferrer">Women In Sports Tech</a> and <a href="https://www.sporttechie.com/" target="_blank" rel="noopener noreferrer">SportTechie</a>.</p>
