@@ -24,7 +24,7 @@ class Header extends Component {
 				</div>
 				<div className="header-right">
 					<a href="https://gowist.seeker.company/submit/job" target="_blank" rel="noopener noreferrer">
-						<button> Post a job! - $250</button>
+						<button> Post a job!</button>
 					</a>					
 				</div>						
 				
