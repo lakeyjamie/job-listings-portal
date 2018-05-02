@@ -20,17 +20,18 @@ class App extends Component {
 
   componentDidMount(){
     this.callApi();
-    console.log('done calling API');
-    //console.log(this.state.jobs.results[0]);
   }
 
   callApi(){
     // Github fetch library : https://github.com/github/fetch
     // Call the API page
+
+    const authorizationValue = "Token " + process.env.REACT_APP_SECRET;
+    console.log(authorizationValue);
     fetch('https://api.seeker.company/v1/jobs', {
       method: 'GET',
       headers: new Headers({
-        'Authorization': 'Token 9fc3c846-f1ca-4f40-9659-9905469caae9', 
+        'Authorization': authorizationValue, 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
         })
@@ -56,7 +57,6 @@ class App extends Component {
     jobsApi = jsonResult;
     // call set state
     this.setState({ jobs: jobsApi });
-    console.log(this.state.jobs.results[0]);
   }
 
   hasLoaded() {
