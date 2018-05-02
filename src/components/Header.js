@@ -12,19 +12,19 @@ class Header extends Component {
 			<header>
 				<div className="header-left">
 					<div className="media">
-						<a href="http://womeninsportstech.org/" target="_blank" rel="noopener noreferrer">
-							<img src={wist} alt="women in sports tech logo orange box" className="sponsor-logo"/>
-						</a>
-					</div>
-					<div className="media">
 						<a href="https://www.sporttechie.com/" target="_blank" rel="noopener noreferrer">
 							<img src={st} alt="sport techie logo" className="sponsor-logo"/>
 							</a>
 					</div>
+					<div className="media">
+						<a href="http://womeninsportstech.org/" target="_blank" rel="noopener noreferrer">
+							<img src={wist} alt="women in sports tech logo orange box" className="sponsor-logo"/>
+						</a>
+					</div>
 				</div>
 				<div className="header-right">
 					<a href="https://gowist.seeker.company/submit/job" target="_blank" rel="noopener noreferrer">
-						<button> Post a job!</button>
+						<button> Post a job</button>
 					</a>					
 				</div>						
 				

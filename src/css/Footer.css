@@ -12,3 +12,15 @@ footer a {
 	color: white;
 	font-weight: 400;
 }
+
+footer a:hover {
+	color: gray;
+}
+
+.social-icons {
+	display:flex;
+}
+
+.SocialMediaShareButton {
+	margin: 5px;
+}
