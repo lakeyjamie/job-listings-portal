@@ -5,12 +5,9 @@ import {
   FacebookShareButton,
   LinkedinShareButton,
   TwitterShareButton,
-  EmailShareButton,
-
   FacebookIcon,
   TwitterIcon,
-  LinkedinIcon,
-  EmailIcon,
+  LinkedinIcon
 } from 'react-share';
 
 
@@ -51,16 +48,6 @@ class Footer extends Component {
 	            round 
 	          />
 					</LinkedinShareButton>
-					<EmailShareButton
-						url={shareURL}
-						subject={title}
-						body="Check out these job listings."
-					>
-						<EmailIcon
-	            size={32}
-	            round 
-	          />
-					</EmailShareButton>
 				</div>
 			</footer>
 		);
