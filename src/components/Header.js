@@ -6,8 +6,6 @@ import st from '../images/sporttechie.png';
 class Header extends Component {
 
 	render() {
-		console.log("wist path is");
-		console.log(wist);
 		return (
 			<header>
 				<div className="header-left">

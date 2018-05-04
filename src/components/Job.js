@@ -16,16 +16,21 @@ class Job extends Component {
 			job_location: PropTypes.string,
 			job_title: PropTypes.string,
 		})
+	};
+
+	constructor(props) {
+		super(props);
+		this.goToJob = this.goToJob.bind(this);
 	}
 
 	goToJob = (event) => {
 		//1. prevent page from relaoding
 		event.preventDefault();
+		event.persist;
 		//2. get text from input
-		const { deskCountry } = this.form;
-		const deskCountryURL = deskCountry.value;
 		//3. change page to url
-		this.props.history.push(`/location/${deskCountryURL}`)
+		console.log(this.props.details);
+		//this.props.history.push(`/job/${details.id}`)
 	}
 
 	render() {
@@ -36,7 +41,7 @@ class Job extends Component {
     	//console.log('going to render a job');
     	//console.log(this.props.details);
 			return (
-				<div className="job-item">
+				<div className="job-item" onClick={this.props.setJobId}>
 					<a href={job_application_link} target="_blank" rel="noopener noreferrer">
 						<h5>{job_title} · {company.name}</h5>
 					</a>

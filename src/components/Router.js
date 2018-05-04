@@ -9,12 +9,18 @@ class Router extends React.Component {
 		jobId: null
 	};
 
+	constructor(props) {
+    super(props);
+    // This binding is necessary to make `this` work in the callback
+    this.setJobId = this.setJobId.bind(this);
+  }
+
 	setJobId(selectedJob) {
 		//take a copy of state
 		var job = {...this.state.jobId};
 		// add to the order
-		job = selectedJob;
 		// call set state
+		job = selectedJob;
 		this.setState({ jobId : job });
 	}
 
