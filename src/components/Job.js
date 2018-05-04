@@ -18,6 +18,16 @@ class Job extends Component {
 		})
 	}
 
+	goToJob = (event) => {
+		//1. prevent page from relaoding
+		event.preventDefault();
+		//2. get text from input
+		const { deskCountry } = this.form;
+		const deskCountryURL = deskCountry.value;
+		//3. change page to url
+		this.props.history.push(`/location/${deskCountryURL}`)
+	}
+
 	render() {
 		const {company, creation_date, end_date, id, job_application_link, job_description, job_link, job_location, job_title} = this.props.details;
 	 if (!this.props.isLoaded) {

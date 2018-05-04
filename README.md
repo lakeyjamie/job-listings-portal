@@ -1,7 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 ## How to use
-To use this code:
 - Sign up at [Seeker](https://seeker.company/) to get your API token. 
 - Clone this repository. 
 - Add an .env folder to your root directory with your API token. 

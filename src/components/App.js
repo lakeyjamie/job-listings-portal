@@ -27,6 +27,7 @@ class App extends Component {
     // Call the API page
 
     const authorizationValue = "Token " + process.env.REACT_APP_SECRET;
+    
     console.log(authorizationValue);
     fetch('https://api.seeker.company/v1/jobs', {
       method: 'GET',
@@ -78,7 +79,7 @@ class App extends Component {
           <Header />
           <main>
             <div className="title">
-              <h1>Job Postings in Sports Tech</h1>
+              <h1>Sports Technology Job Opportunities</h1>
               <h4>You'll find opportunities, at all levels, in all businesses, throughout the sports technology and sports innovation landscape.</h4>
             </div>
             {
