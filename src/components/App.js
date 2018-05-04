@@ -88,6 +88,7 @@ class App extends Component {
                 index={key}
                 details={this.state.jobs.results[key]}
                 isLoaded={this.state.isLoaded}
+                setJobId={this.props.setJobId}
               /> )
             }
           </main>

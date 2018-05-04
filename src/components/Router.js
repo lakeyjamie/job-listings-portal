@@ -26,7 +26,9 @@ class Router extends React.Component {
 						exact 
 						path="/" 
 						render={(props) => (
-							<App/>
+							<App
+								setJobId={this.setJobId}
+							/>
 						)} 
 					/>
 					<Route  
