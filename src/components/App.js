@@ -3,12 +3,14 @@ import '../css/App.css';
 import Job from './Job';
 import Header from './Header';
 import Footer from './Footer';
+import SearchBar from './SearchBar';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       jobs: {},
+      next: null,
       error: null,
       isLoaded: false,
       items: []
@@ -19,17 +21,17 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.callApi();
+    this.callApi("https://api.seeker.company/v1/jobs");
   }
 
-  callApi(){
+  callApi(url){
     // Github fetch library : https://github.com/github/fetch
     // Call the API page
 
     const authorizationValue = "Token " + process.env.REACT_APP_SECRET;
     
     console.log(authorizationValue);
-    fetch('https://api.seeker.company/v1/jobs', {
+    fetch(url, {
       method: 'GET',
       headers: new Headers({
         'Authorization': authorizationValue, 
@@ -53,11 +55,21 @@ class App extends Component {
 
   updateJobs(jsonResult){
     //take a copy of state
+    console.log(jsonResult);
+    console.log(jsonResult.results[0].creation_date);
+    //take a copy of the current state
     var jobsApi = {...this.state.jobs};
     // add to the order
-    jobsApi = jsonResult;
+    var jobsApi = jsonResult.results;
+    //sort the results by date
+    var sortedJobs = this.sortJobs(jobsApi);
+
+    var nextPage = jsonResult.next;
     // call set state
-    this.setState({ jobs: jobsApi });
+    this.setState({ 
+      jobs: jobsApi, 
+      next: nextPage
+    });
   }
 
   hasLoaded() {
@@ -66,6 +78,28 @@ class App extends Component {
     // call set state
     this.setState({ isLoaded: loaded });    
   }
+
+  handleSearch(e) {
+    //
+    e.preventDefault();
+    var pathname = window.location.pathname;
+    console.log(pathname);
+    //var url = "https://api.seeker.company/v1/?" + pathname;
+    //console.log(url);
+    //this.callApi(url);
+  }
+
+  //sort the array of Jobs by date
+  sortJobs(jobsArray) {
+    jobsArray.sort(function(a,b){
+    var dateA = new Date(a.creation_date);
+    var dateB = new Date(b.creation_date);
+    return dateB > dateA ? 1 //if B is more recent, push A to the end
+      : dateB < dateA ? -1 //if B is less recent than A, push A to beginning
+      :0; // A and B are equal
+    });
+  }
+
 
   render() {
     const { jobs, error, isLoaded, items} = this.state;
@@ -81,14 +115,16 @@ class App extends Component {
             <div className="title">
               <h1>Sports Technology Job Opportunities</h1>
               <h4>You'll find opportunities, at all levels, in all businesses, throughout the sports technology and sports innovation landscape.</h4>
+
             </div>
             {
-              Object.keys(this.state.jobs.results).map(key => <Job 
+              Object.keys(this.state.jobs).map(key => <Job 
                 key={key}
                 index={key}
-                details={this.state.jobs.results[key]}
+                details={this.state.jobs[key]}
                 isLoaded={this.state.isLoaded}
                 setJobId={this.props.setJobId}
+                history={this.props.history}
               /> )
             }
           </main>

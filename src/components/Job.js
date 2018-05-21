@@ -26,11 +26,12 @@ class Job extends Component {
 	goToJob = (event) => {
 		//1. prevent page from relaoding
 		event.preventDefault();
-		event.persist;
+		//event.persist;
 		//2. get text from input
 		//3. change page to url
-		console.log(this.props.details);
-		//this.props.history.push(`/job/${details.id}`)
+		console.log(this.props.history);
+		//${this.props.details.id}
+		this.props.history.push("/job/1");
 	}
 
 	render() {

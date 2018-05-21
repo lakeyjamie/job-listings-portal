@@ -22,6 +22,14 @@ class Router extends React.Component {
 		// call set state
 		job = selectedJob;
 		this.setState({ jobId : job });
+
+				//event.preventDefault();
+		//event.persist;
+		//2. get text from input
+		//3. change page to url
+		console.log(this.props.history);
+		//${this.props.details.id}
+		this.props.history.push("/job/1");
 	}
 
 	render() {
@@ -33,6 +41,7 @@ class Router extends React.Component {
 						path="/" 
 						render={(props) => (
 							<App
+								{...props}
 								setJobId={this.setJobId}
 							/>
 						)} 
