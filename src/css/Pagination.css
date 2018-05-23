@@ -1,0 +1,11 @@
+.pagination {
+    margin: auto;
+    display: table;
+    margin-bottom: 20px;
+}
+
+.pagination button {
+    margin: 5px;
+    font-size: 20px;
+    line-height: 20px;
+}

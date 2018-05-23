@@ -4,6 +4,8 @@ import Job from './Job';
 import Header from './Header';
 import Footer from './Footer';
 import SearchBar from './SearchBar';
+import Pagination from './Pagination';
+import exampleResult from '../example-result.json';
 
 class App extends Component {
   constructor(props) {
@@ -11,6 +13,7 @@ class App extends Component {
     this.state = {
       jobs: {},
       next: null,
+      previous: null,
       error: null,
       isLoaded: false,
       items: []
@@ -18,6 +21,7 @@ class App extends Component {
     
     this.updateJobs = this.updateJobs.bind(this);
     this.hasLoaded = this.hasLoaded.bind(this);
+    this.handleNextButtonClick = this.handleNextButtonClick.bind(this)
   }
 
   componentDidMount(){
@@ -44,6 +48,10 @@ class App extends Component {
         // Get the result
         // If we want text, call result.text()
         return result.json();
+
+        //ONLY FOR TESTING EXAMPLE - CHANGE LATER;
+        //console.log(exampleResult);
+        //return exampleResult;
       })
       .then((jsonResult) => {
         // Do something with the result
@@ -53,6 +61,7 @@ class App extends Component {
     })
   }
 
+  //runs everytime the API is called, and updates the state
   updateJobs(jsonResult){
     //take a copy of state
     console.log(jsonResult);
@@ -65,10 +74,12 @@ class App extends Component {
     var sortedJobs = this.sortJobs(jobsApi);
 
     var nextPage = jsonResult.next;
+    var previousPage= jsonResult.previous;
     // call set state
     this.setState({ 
       jobs: jobsApi, 
-      next: nextPage
+      next: nextPage,
+      previous: previousPage
     });
   }
 
@@ -100,6 +111,14 @@ class App extends Component {
     });
   }
 
+  handleNextButtonClick(url){
+    console.log("handling button click");
+    console.log(url);
+    if (url != null) {
+      this.callApi(url);
+    }
+  }
+
 
   render() {
     const { jobs, error, isLoaded, items} = this.state;
@@ -127,6 +146,11 @@ class App extends Component {
                 history={this.props.history}
               /> )
             }
+            <Pagination 
+              next={this.state.next}
+              previous={this.state.previous}
+              handleNextButtonClick={this.handleNextButtonClick}
+            />
           </main>
           <Footer />
         </div>
