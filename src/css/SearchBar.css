@@ -1,3 +1,11 @@
-input {
-    color: blue;
+input[type=text] {
+    font-size: 20px;
+    line-height: 30px;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    width: 50vw;
+    max-width: 400px;
+}
+input[type=text]:focus {
+    outline-width: 0;
 }
