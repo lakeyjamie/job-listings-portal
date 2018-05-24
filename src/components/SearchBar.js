@@ -1,21 +1,26 @@
 import React from 'react'; 
 
 class SearchBar extends React.Component {
-	searchRef = React.createRef();
+	constructor(props) {
+		super(props);
+    	this.handleSubmit = this.handleSubmit.bind(this);
+	}
 
-	handleSearch = event => {
-		event.preventDefault;
-		var query = this.nameRef.value;
-		console.log(query);
+	handleSubmit(e){
+		//Not preventing page from refreshing
+		e.preventDefault;
+		console.log(e);
 	}
 
 	render() {
 		return (
-			<form onSubmit={this.handleSearch}>
+			<form onSubmit={this.handleSubmit}>
 				<input 
-				type="text" 
-				ref={this.searchRef}
-			/>
+					type="text" 
+					value={this.props.searchText}
+					placeholder="Search..."
+					onChange={this.props.handleSearch}
+				/>
 			</form>
 		)
 	}

@@ -16,12 +16,13 @@ class App extends Component {
       previous: null,
       error: null,
       isLoaded: false,
-      items: []
+      searchText: ""
     };
     
     this.updateJobs = this.updateJobs.bind(this);
     this.hasLoaded = this.hasLoaded.bind(this);
-    this.handleNextButtonClick = this.handleNextButtonClick.bind(this)
+    this.handleNextButtonClick = this.handleNextButtonClick.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   componentDidMount(){
@@ -63,9 +64,6 @@ class App extends Component {
 
   //runs everytime the API is called, and updates the state
   updateJobs(jsonResult){
-    //take a copy of state
-    console.log(jsonResult);
-    console.log(jsonResult.results[0].creation_date);
     //take a copy of the current state
     var jobsApi = {...this.state.jobs};
     // add to the order
@@ -90,15 +88,6 @@ class App extends Component {
     this.setState({ isLoaded: loaded });    
   }
 
-  handleSearch(e) {
-    //
-    e.preventDefault();
-    var pathname = window.location.pathname;
-    console.log(pathname);
-    //var url = "https://api.seeker.company/v1/?" + pathname;
-    //console.log(url);
-    //this.callApi(url);
-  }
 
   //sort the array of Jobs by date
   sortJobs(jobsArray) {
@@ -119,6 +108,16 @@ class App extends Component {
     }
   }
 
+  handleSearch(e) {
+		console.log("handle change");
+		console.log(e.target.value);
+		this.setState({
+			searchText: e.target.value
+    });
+    var url = "https://api.seeker.company/v1/jobs?search=" + 
+      this.state.searchText;
+    this.callApi(url);
+	}
 
   render() {
     const { jobs, error, isLoaded, items} = this.state;
@@ -134,7 +133,10 @@ class App extends Component {
             <div className="title">
               <h1>Sports Technology Job Opportunities</h1>
               <h4>You'll find opportunities, at all levels, in all businesses, throughout the sports technology and sports innovation landscape.</h4>
-
+              <SearchBar 
+                handleSearch={this.handleSearch}
+                searchText={this.state.searchText}
+              />
             </div>
             {
               Object.keys(this.state.jobs).map(key => <Job 
