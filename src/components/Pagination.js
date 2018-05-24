@@ -1,4 +1,5 @@
 import React from 'react'; 
+import PropTypes from 'prop-types';
 import PreviousButton from './PreviousButton';
 import NextButton from './NextButton';
 import '../css/Pagination.css';
@@ -18,6 +19,12 @@ class Pagination extends React.Component {
             </div>
 		)
 	}
+}
+
+Pagination.propTypes = {
+    handleNextButtonClick: PropTypes.func.isRequired,
+    next: PropTypes.string,
+	previous: PropTypes.string
 }
 
 export default Pagination;

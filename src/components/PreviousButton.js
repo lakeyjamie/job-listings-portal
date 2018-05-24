@@ -1,4 +1,5 @@
 import React from 'react'; 
+import PropTypes from 'prop-types';
 
 class PreviousButton extends React.Component {
     render() {
@@ -11,6 +12,11 @@ class PreviousButton extends React.Component {
             </React.Fragment>
 		)
 	}
+}
+
+PreviousButton.propTypes = {
+	handleNextButtonClick: PropTypes.func.isRequired,
+	previous: PropTypes.string
 }
 
 export default PreviousButton;

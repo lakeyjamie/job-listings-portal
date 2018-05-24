@@ -54,4 +54,12 @@ class Job extends Component {
 	}
 }
 
+Job.propTypes = {
+	index: PropTypes.string.isRequired,
+	details: PropTypes.object.isRequired,
+	isLoaded: PropTypes.bool.isRequired,
+	setJobId: PropTypes.func.isRequired,
+	history: PropTypes.object.isRequired
+}
+
 export default Job;
