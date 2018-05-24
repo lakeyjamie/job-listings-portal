@@ -1,0 +1,28 @@
+.animation {
+   margin: 0 auto;
+   display: table;
+   margin-top: 50vh;
+}
+
+
+.loading:after{
+    content: ' . . . ';
+    animation: dots 1.2s steps(5, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% {
+        color: orange;
+        opacity: 1.0;
+    }
+    40% {
+        color: orange;
+        opacity: 0.8;
+    }
+    60% {
+        opacity: 0.6;
+    }
+    80%, 100% {
+        opacity: 0.4;
+    }
+}

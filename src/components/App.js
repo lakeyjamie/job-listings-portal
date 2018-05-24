@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../css/App.css';
+import Loading from './Loading';
 import Job from './Job';
 import Header from './Header';
 import Footer from './Footer';
@@ -124,7 +125,7 @@ class App extends Component {
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
-      return <div>...</div>;
+      return <Loading />;
     } else {
       return (
         <div className="container">
@@ -148,6 +149,7 @@ class App extends Component {
                 history={this.props.history}
               /> )
             }
+            <NoResults />
             <Pagination 
               next={this.state.next}
               previous={this.state.previous}
