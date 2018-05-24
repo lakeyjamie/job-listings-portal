@@ -5,6 +5,7 @@ input[type=text] {
     border-radius: 2px;
     width: 50vw;
     max-width: 400px;
+    margin: 10px auto;
 }
 input[type=text]:focus {
     outline-width: 0;

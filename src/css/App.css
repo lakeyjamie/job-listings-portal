@@ -39,7 +39,6 @@ footer {
   .container {
     grid-template-areas:
       "header"
-      "nav"
       "content"
       "side"
       "footer";
@@ -64,6 +63,8 @@ footer {
   header {
     flex-wrap: wrap;
   }
+
+  
 }
 
 .title * {
