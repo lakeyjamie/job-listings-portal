@@ -6,6 +6,7 @@ import Header from './Header';
 import Footer from './Footer';
 import SearchBar from './SearchBar';
 import Pagination from './Pagination';
+import NoResults from './NoResults';
 import exampleResult from '../example-result.json';
 
 class App extends Component {
@@ -111,7 +112,10 @@ class App extends Component {
 
   handleSearch(e) {
 		console.log("handle change");
-		console.log(e.target.value);
+    console.log(e.target.value);
+    if (e.keyCode == 13) {
+      e.preventDefault();
+    }
 		this.setState({
 			searchText: e.target.value
     });

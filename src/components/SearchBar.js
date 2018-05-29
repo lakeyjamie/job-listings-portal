@@ -14,14 +14,21 @@ class SearchBar extends React.Component {
 		console.log(e);
 	}
 
+	handleKeyPress(e){
+		if (e.which === 13 /* Enter */) {
+			e.preventDefault();
+		}
+	}
+
 	render() {
 		return (
 			<form onSubmit={this.handleSubmit}>
 				<input 
 					type="text" 
 					value={this.props.searchText}
-					placeholder="Search..."
+					placeholder="Search for a job, company, or location..."
 					onChange={this.props.handleSearch}
+					onKeyPress={this.handleKeyPress}
 				/>
 			</form>
 		)
