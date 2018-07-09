@@ -113,9 +113,6 @@ class App extends Component {
   handleSearch(e) {
 		console.log("handle change");
     console.log(e.target.value);
-    if (e.keyCode == 13) {
-      e.preventDefault();
-    }
 		this.setState({
 			searchText: e.target.value
     });
