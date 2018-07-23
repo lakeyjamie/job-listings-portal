@@ -39,6 +39,7 @@ footer {
   .container {
     grid-template-areas:
       "header"
+      "nav"
       "content"
       "side"
       "footer";
