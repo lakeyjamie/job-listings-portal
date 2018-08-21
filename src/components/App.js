@@ -28,7 +28,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.callApi("https://api.seeker.company/v1/jobs");
+    this.callApi("https://api.seeker.company/v1/jobs?page_size=50");
   }
 
   callApi(url){
