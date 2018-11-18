@@ -22,7 +22,7 @@ const styles = {
     marginTop: 50,
   },
   title: {
-    maxWidth: '100vw',
+    maxWidth: 600,
     padding: '3vw',
     borderRadius: 3,
     backgroundColor: 'rgba(0, 0, 0, 0.5)',

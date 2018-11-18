@@ -6,11 +6,11 @@ import gif from '../images/conference.gif';
 class HeroImage extends React.Component  {
   render() {
     return (
-        <div id="jamie">
+        <div>
             <LazyHero
               imageSrc={gif}
               parallaxOffset={100}
-              minHeight="80vh"
+              minHeight="60vh"
               color="#FF6801"
               opacity={0}
               transitionDuration={900}

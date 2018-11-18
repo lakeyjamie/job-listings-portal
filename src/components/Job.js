@@ -39,8 +39,6 @@ class Job extends Component {
 	 if (!this.props.isLoaded) {
       return <div>not loaded yet</div>;
     } else {
-    	//console.log('going to render a job');
-    	//console.log(this.props.details);
 			return (
 				<div className="job-item" onClick={this.props.setJobId}>
 					<a href={job_application_link} target="_blank" rel="noopener noreferrer">
