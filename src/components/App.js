@@ -9,21 +9,30 @@ import SearchBar from './SearchBar';
 import Pagination from './Pagination';
 import NoResults from './NoResults';
 import HeroImage from './HeroImage';
-import exampleResult from '../example-result.json';
 
 const LINK = "http://womeninsportstech.org/fellowships/";
 
 const styles = {
-  base: {
-  },
   belowTheFoldText: {
     width: '70%',
-    minWidth: 400,
     textAlign: 'center',
     marginLeft: 'auto',
     marginRight: 'auto',
     marginBottom: 50,
     marginTop: 50,
+  },
+  title: {
+    maxWidth: '100vw',
+    padding: '3vw',
+    borderRadius: 3,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    margin: '3vw'
+  },
+  h1: {
+    lineHeight: 1,
+  },
+  titleText: {
+    color: 'white',
   }
 };
 
@@ -68,14 +77,9 @@ class App extends Component {
         // Get the result
         // If we want text, call result.text()
         return result.json();
-
-        //ONLY FOR TESTING EXAMPLE - CHANGE LATER;
-        //console.log(exampleResult);
-        //return exampleResult;
       })
       .then((jsonResult) => {
         // Do something with the result
-        //console.log(jsonResult);
         this.updateJobs(jsonResult);
         this.hasLoaded();
     })
@@ -147,9 +151,13 @@ class App extends Component {
       return (
         <div className="container">
           <Header>
-            <div className="title">
-              <h1>Sports Technology Job and Summer Internship Opportunities</h1>
-              <h4>You'll find opportunities, at all levels, in businesses that support diverse workforces, throughout the sports technology and sports innovation landscape.</h4>
+            <div style={styles.title}>
+              <h1 style={[styles.h1, styles.titleText]}>
+                Sports Technology Job and Summer Internship Opportunities
+              </h1>
+              <h4 style={[styles.h1, styles.titleText]}>
+                You'll find opportunities, at all levels, in businesses that support diverse workforces, throughout the sports technology and sports innovation landscape.
+              </h4>
               <SearchBar
                 handleSearch={this.handleSearch}
                 searchText={this.state.searchText}
@@ -157,7 +165,7 @@ class App extends Component {
             </div>
           </Header>
           <main>
-            <div style={styles.belowTheFoldText}>
+            <div style={[styles.belowTheFoldText]}>
               <p>The companies listed below have partnered with WiST to encourage women to apply for both full time positions as well as summer internship opportunities. We welcome and encourage college and grad students to apply for the <a href={LINK}>2019 Summer WiST Fellowship.</a></p>
               <SearchBar
                 handleSearch={this.handleSearch}

@@ -6,9 +6,9 @@
     "nav content side"
     "footer footer footer";
 
-  grid-template-columns: 50px 1fr 50px;
+  grid-template-columns: 0px 1fr 0px;
   grid-template-rows: auto 1fr auto;
-  grid-gap: 10px;
+  grid-gap: 0px;
 
   height: 100vh;
 }
@@ -19,10 +19,8 @@ header {
 
 nav {
   grid-area: nav;
-  margin-left: 0.5rem;
+  margin-left: 0rem;
 }
-
-
 
 main {
   grid-area: content;
@@ -30,7 +28,7 @@ main {
 
 aside {
   grid-area: side;
-  margin-right: 0.5rem;
+  margin-right: 0rem;
 }
 
 footer {
@@ -49,9 +47,9 @@ footer {
     grid-template-columns: 1fr;
     grid-template-rows:
       auto /* Header */
-      minmax(75px, auto) /* Nav */
-      1fr /* Content */
-      minmax(75px, auto) /* Sidebar */
+      auto /* Nav */
+      auto /* Content */
+      auto /* Sidebar */
       auto; /* Footer */
   }
 
@@ -60,24 +58,16 @@ footer {
   }
 
   main {
-    margin: 0px 2rem;
+    margin: 0px 0px;
   }
 
   header {
     flex-wrap: wrap;
   }
 
-
 }
 
 .title * {
   text-align: center;
   color: white;
-}
-
-.title {
-  padding: 60px;
-  background-color: rgba(0, 0, 0, 0.5);
-  margin: 15%;
-  border-radius: 3px;
 }
