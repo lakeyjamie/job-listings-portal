@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Radium from 'radium';
 import NavBar from './NavBar';
 import HeroImage from './HeroImage';
 import wist from '../images/women-in-sports-tech-logo-orange-box.png';
@@ -18,4 +19,4 @@ class Header extends Component {
 	}
 }
 
-export default Header;
+export default Radium(Header);

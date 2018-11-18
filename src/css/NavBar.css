@@ -26,6 +26,11 @@ div.nav-bar {
 
 
 @media (max-width: 560px) {
+	.nav-bar {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
   .header-left {
     flex-wrap: wrap;
   }
