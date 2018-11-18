@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../css/App.css';
+import Radium from 'radium';
 import Loading from './Loading';
 import Job from './Job';
 import Header from './Header';
@@ -7,7 +8,24 @@ import Footer from './Footer';
 import SearchBar from './SearchBar';
 import Pagination from './Pagination';
 import NoResults from './NoResults';
+import HeroImage from './HeroImage';
 import exampleResult from '../example-result.json';
+
+const LINK = "http://womeninsportstech.org/fellowships/";
+
+const styles = {
+  base: {
+  },
+  belowTheFoldText: {
+    width: '70%',
+    minWidth: 400,
+    textAlign: 'center',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginBottom: 50,
+    marginTop: 50,
+  }
+};
 
 class App extends Component {
   constructor(props) {
@@ -20,7 +38,7 @@ class App extends Component {
       isLoaded: false,
       searchText: ""
     };
-    
+
     this.updateJobs = this.updateJobs.bind(this);
     this.hasLoaded = this.hasLoaded.bind(this);
     this.handleNextButtonClick = this.handleNextButtonClick.bind(this);
@@ -36,12 +54,11 @@ class App extends Component {
     // Call the API page
 
     const authorizationValue = "Token " + process.env.REACT_APP_SECRET;
-    
-    console.log(authorizationValue);
+
     fetch(url, {
       method: 'GET',
       headers: new Headers({
-        'Authorization': authorizationValue, 
+        'Authorization': authorizationValue,
         'Content-Type': 'application/json',
         'Accept': 'application/json'
         })
@@ -76,8 +93,8 @@ class App extends Component {
     var nextPage = jsonResult.next;
     var previousPage= jsonResult.previous;
     // call set state
-    this.setState({ 
-      jobs: jobsApi, 
+    this.setState({
+      jobs: jobsApi,
       next: nextPage,
       previous: previousPage
     });
@@ -87,7 +104,7 @@ class App extends Component {
     //take a copy of state
     var loaded = true;
     // call set state
-    this.setState({ isLoaded: loaded });    
+    this.setState({ isLoaded: loaded });
   }
 
 
@@ -111,12 +128,11 @@ class App extends Component {
   }
 
   handleSearch(e) {
-		console.log("handle change");
     console.log(e.target.value);
 		this.setState({
 			searchText: e.target.value
     });
-    var url = "https://api.seeker.company/v1/jobs?search=" + 
+    var url = "https://api.seeker.company/v1/jobs?search=" +
       this.state.searchText;
     this.callApi(url);
 	}
@@ -130,18 +146,26 @@ class App extends Component {
     } else {
       return (
         <div className="container">
-          <Header />
-          <main>
+          <Header>
             <div className="title">
-              <h1>Sports Technology Job Opportunities</h1>
-              <h4>You'll find opportunities, at all levels, in all businesses, throughout the sports technology and sports innovation landscape.</h4>
-              <SearchBar 
+              <h1>Sports Technology Job and Summer Internship Opportunities</h1>
+              <h4>You'll find opportunities, at all levels, in businesses that support diverse workforces, throughout the sports technology and sports innovation landscape.</h4>
+              <SearchBar
+                handleSearch={this.handleSearch}
+                searchText={this.state.searchText}
+              />
+            </div>
+          </Header>
+          <main>
+            <div style={styles.belowTheFoldText}>
+              <p>The companies listed below have partnered with WiST to encourage women to apply for both full time positions as well as summer internship opportunities. We welcome and encourage college and grad students to apply for the <a href={LINK}>2019 Summer WiST Fellowship.</a></p>
+              <SearchBar
                 handleSearch={this.handleSearch}
                 searchText={this.state.searchText}
               />
             </div>
             {
-              Object.keys(this.state.jobs).map(key => <Job 
+              Object.keys(this.state.jobs).map(key => <Job
                 key={key}
                 index={key}
                 details={this.state.jobs[key]}
@@ -151,7 +175,7 @@ class App extends Component {
               /> )
             }
             <NoResults />
-            <Pagination 
+            <Pagination
               next={this.state.next}
               previous={this.state.previous}
               handleNextButtonClick={this.handleNextButtonClick}
@@ -164,4 +188,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Radium(App);

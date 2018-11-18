@@ -22,6 +22,8 @@ nav {
   margin-left: 0.5rem;
 }
 
+
+
 main {
   grid-area: content;
 }
@@ -65,9 +67,17 @@ footer {
     flex-wrap: wrap;
   }
 
-  
+
 }
 
 .title * {
   text-align: center;
+  color: white;
+}
+
+.title {
+  padding: 60px;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 15%;
+  border-radius: 3px;
 }
