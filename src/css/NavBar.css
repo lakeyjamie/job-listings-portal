@@ -1,0 +1,35 @@
+div.nav-bar {
+	background: black;
+	display: flex;
+}
+
+.sponsor-logo {
+	height: 70px;
+	margin: 15px 0px 15px 15px ;
+}
+
+.header-right {
+	margin-left: auto;
+	margin-right: 15px;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.header-left {
+	display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
+
+@media (max-width: 560px) {
+  .header-left {
+    flex-wrap: wrap;
+  }
+	.header-right{
+		margin: 32.5px auto 32.5px auto;
+	}
+}
