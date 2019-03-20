@@ -13,7 +13,7 @@ class HeroImage extends React.Component  {
               minHeight="60vh"
               color="#FF6801"
               opacity={0}
-              transitionDuration={900}
+              transitionDuration={600}
               transitionTimingFunction="ease-in-out"
             >
               {this.props.children}
